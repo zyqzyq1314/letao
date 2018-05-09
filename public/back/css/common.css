@@ -8,5 +8,43 @@
 }
 .mt_150 {
   margin-top: 150px;
-  
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+/* lvha */
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+
+/* lt侧边*/
+.lt_aside{
+  width: 180px;
+  height: 100%;
+  background-color: #000;
+  position: fixed;
+  top:0;
+  left:0;
+}
+.brand {
+  background-color: #367FA9;
+  height:50px;
+  width:180px;
+  line-height:50px;
+  text-align: center;
+  font-size: 24px;
+}
+.brand a {
+  color: #fff;
 }

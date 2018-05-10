@@ -121,6 +121,11 @@ ul {
 .breadcrumb {
   margin-top: 20px;
 }
+.lt_echart1,
+.lt_echart2{
+  width:48%;
+  height:400px;
+}
 
 
 

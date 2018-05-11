@@ -10,60 +10,81 @@
 </head>
 <body>
 <!--乐淘侧边-->
- <div class="lt_aside">
-   <div class="brand">
-     <a href="#">黑马20期</a>
-   </div>
-   <!--个人用户-->
-    <div class="user">
-      <img src="images/zyq.jpg" alt="">
-      <p>超级管理员</p>
-    </div>
-   <div class="nav">
-      <ul>
-        <li>
-          <a href="user.html">
-            <i class="glyphicon glyphicon-user"></i>
-            <span>用户管理</span>
+<div class="lt_aside">
+  <div class="brand">
+    <a href="#">黑马20期</a>
+  </div>
+  <!--个人用户-->
+  <div class="user">
+    <img src="images/zyq.jpg" alt="">
+    <p>超级管理员</p>
+  </div>
+  <div class="nav">
+    <ul>
+      <li>
+        <a href="user.html">
+          <i class="glyphicon glyphicon-user"></i>
+          <span>用户管理</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;" class="category">
+          <i class="glyphicon glyphicon-list"></i>
+          <span>分类管理</span>
+        </a>
+        <div class="child" style="display: block;">
+          <a href="first.html" class="current">
+            一级分类
           </a>
-        </li>
-        <li>
-          <a href="javascript:;" class="category">
-            <i class="glyphicon glyphicon-list"></i>
-            <span>分类管理</span>
-          </a>
-          <div class="child" style="display: block;">
-            <a href="first.html">
-              一级分类
-            </a>
-            <a href="second.html" class="current">
+          <a href="second.html">
             二级分类
-            </a>
-          </div>
-        </li>
-        <li>
-          <a href="product.html" >
-            <i class="glyphicon glyphicon-tags"></i>
-            <span>商品管理</span>
           </a>
-        </li>
-      </ul>
-   </div>
- </div>
+        </div>
+      </li>
+      <li>
+        <a href="product.html" >
+          <i class="glyphicon glyphicon-tags"></i>
+          <span>商品管理</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
 <!--乐淘主体-->
- <div class="lt_main">
-   <div class="lt_topbar">
-     <a href="javascript:;" class="pull-left icon-menu"><i class="glyphicon glyphicon-align-justify"></i></a>
-     <a href="javascript:;" class="pull-right icon-logout"><i class="glyphicon glyphicon-log-out"></i></a>
-   </div>
-   <div class="container-fluid">
-     <ol class="breadcrumb">
-       <li><a href="#">管理系统</a></li>
-       <li class="active">用户管理</li>
-     </ol>
-     <div>我是second页面</div>
-   </div>
- </div>
+<div class="lt_main">
+  <div class="lt_topbar">
+    <a href="javascript:;" class="pull-left icon-menu"><i class="glyphicon glyphicon-align-justify"></i></a>
+    <a href="javascript:;" class="pull-right icon-logout"><i class="glyphicon glyphicon-log-out"></i></a>
+  </div>
+  <div class="container-fluid">
+    <ol class="breadcrumb">
+      <li><a href="#">管理系统</a></li>
+      <li class="active">分类管理</li>
+      <li class="active">一级分类</li>
+    </ol>
+    <div class="lt_content">
+      <button class="btn btn-default mb_20" id="addBtn">添加分类</button>
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th>序号</th>
+          <th>一级分类名称</th>
+          <th>二级分类名称</th>
+          <th>二级分类logo</th>
+        </tr>
+        </thead>
+        <tbody>
+          <!--挖个坑-->
+        </tbody>
+      </table>
+      <div class="text-right">
+        <ul class="paginator">
+        </ul>
+      </div>
+    
+    </div>
+  </div>
+</div>
 <!-- 模态框-->
 <!-- 登录退出的模态框,  配置 data-dismiss="modal" 可以关闭模态框 -->
 <div class="modal fade" id="logoutModal" >
@@ -83,11 +104,78 @@
     </div>
   </div>
 </div>
+<!--添加分类模态框-->
+<div class="modal fade" id="addModal" >
+  <div class="modal-dialog modal-sm">
+    <form id="form">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
+          <h4 class="modal-title">添加分类</h4>
+        </div>
+        <div class="modal-body">
+          <!--添加一级分类-->
+          <div class="form-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" >
+                <span id="dropdownText">请选择一级分类</span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" >
+                <!--挖个坑-->
+                
+              </ul>
+            </div>
+          </div>
+          <!--请输入二级分类-->
+          <div class="form-group">
+            <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
+          </div>
+          <!--上传图片-->
+          <div class="form-group">
+            <label class="btn btn-default" for="fileupload">上传图片</label>
+            <!-- name 用于将来后台接收图片数据, 指定的name必须和接口中相符
+                    data-url 用于指定后台提供的图片上传接口
+               -->
+            <input type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic" style="display: none;">
+          </div>
+          <!--图片预览-->
+          <div class="form-group">
+            <img src="images/none.png" alt="" width=100 height=100>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-primary">添加</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script type="text/html" id="secondTmp">
+  {{each rows v i}}
+  <tr>
+    <td>{{i+1+(page-1)*size}}</td>
+    <td>{{v.categoryName}}</td>
+    <td>{{v.brandName}}</td>
+    <td><img src="{{ v.brandLogo ? v.brandLogo : './images/none.png' }}" alt="" height=50;></td>
+  </tr>
+  {{/each}}
+</script>
+<script type="text/html" id="dropdownTpl">
+  {{each rows v i}}
+  <li ><a tabindex="-1" href="#" data-id="{{ v.id }}">{{v.categoryName}}</a></li>
+  {{/each }}
+  
+</script>
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="js/common.js"></script>
+<script src="js/second.js"></script>
 
 
 </body>

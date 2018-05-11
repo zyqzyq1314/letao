@@ -33,7 +33,9 @@ ul {
   text-align: center;
   vertical-align: middle;
 }
-
+.red {
+  color: #A94442;;
+}
 /* lt侧边*/
 .lt_aside{
   width: 180px;

@@ -27,6 +27,12 @@ a:active {
 ul {
   list-style: none;
 }
+/*所有表格内容垂直水平居中*/
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
+}
 
 /* lt侧边*/
 .lt_aside{

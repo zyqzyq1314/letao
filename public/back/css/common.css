@@ -36,6 +36,9 @@ ul {
 .red {
   color: #A94442;;
 }
+.mb_20 {
+  margin-bottom: 20px;
+}
 /* lt侧边*/
 .lt_aside{
   width: 180px;

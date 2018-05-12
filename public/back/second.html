@@ -123,9 +123,10 @@
               </button>
               <ul class="dropdown-menu" >
                 <!--挖个坑-->
-                
               </ul>
             </div>
+            <input type="hidden" name="categoryId">
+            <input type="hidden" name="hot" value="1">
           </div>
           <!--请输入二级分类-->
           <div class="form-group">
@@ -140,8 +141,9 @@
             <input type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic" style="display: none;">
           </div>
           <!--图片预览-->
-          <div class="form-group">
+          <div class="form-group" id="imgBox">
             <img src="images/none.png" alt="" width=100 height=100>
+            <input type="hidden" name="brandLogo">
           </div>
         </div>
         <div class="modal-footer">
@@ -174,6 +176,10 @@
 <script src="./lib/nprogress/nprogress.js"></script>
 <script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<!-- jquery ui小部件，上传插件依赖了jquery ui的小部件 -->
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<!-- jquery上传插件 -->
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="js/common.js"></script>
 <script src="js/second.js"></script>
 
